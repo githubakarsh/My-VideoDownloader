@@ -5,19 +5,15 @@ var server = 'http://localhost:4000';
 
 mp3Btn.addEventListener('click', () => {
 	console.log(`URL: ${URLinput.value}`);	
-	redirectMp3(URLinput.value);
+	redirectMP3MP4(URLinput.value, 3);
 });
 
 
 mp4Btn.addEventListener('click', () => {
 	console.log(`URL: ${URLinput.value}`);	
-	redirectMp4(URLinput.value);
+	redirectMP3MP4(URLinput.value, 4);
 });
 
-function redirectMp3(query) {
-	window.location.href = `${server}/downloadmp3?url=${query}`;
-}
-
-function redirectMp4(query) {
-	window.location.href = `${server}/downloadmp4?url=${query}`;
+function redirectMP3MP4(query, param) {
+	window.location.href = `${server}/downloadmp${param}?url=${query}`;
 }
